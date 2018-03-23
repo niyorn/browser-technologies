@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Feature Technologies</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet">
+    <style>
+        :root {
+            --material-shaduw-1: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            --material-shaudw-2: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+            --material-transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            height: 100%;
+        }
+
+        :focus {
+            outline: border solid 0.2rem;
+        }
+
+        /* *********************Menu*********************** */
+
+        header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+        }
+
+        header.enhanced {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        @media (min-width: 34em) {
+            header {
+                display: flex;
+                box-shadow: var(--material-shaduw-1);
+                flex-wrap: wrap;
+            }
+        }
+
+        nav {
+            box-shadow: var(--material-shaduw-1);
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .enhanced nav {
+            display: none;
+        }
+
+        @media (min-width: 34em) {
+            nav,
+            .enhanced nav {
+                display: flex;
+                margin-left: auto;
+                box-shadow: none;
+            }
+        }
+
+        .enhanced nav.active {
+            display: flex;
+            width: 100%;
+        }
+
+        nav h2 {
+            font-size: 5em;
+            text-align: center;
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            width: 100%;
+        }
+
+        @media (min-width: 34em) {
+            nav ul {
+                margin-left: auto;
+                width: initial;
+            }
+        }
+
+        nav button {
+            margin-left: auto;
+        }
+
+        nav li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.7em;
+            width: 100%;
+        }
+
+        nav a {
+            text-decoration: none;
+            padding: 1rem;
+            display: flex;
+            height: 100%;
+            align-items: center;
+            color: black;
+            position: relative;
+        }
+
+        nav a:hover::after,
+        nav a:focus::after {
+            content: '';
+            width: 100%;
+            height: 0.4rem;
+            ;
+            background-color: black;
+            ;
+            outline: none;
+            transform: scale(1.07);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+
+        .logo {
+            font-size: 5em;
+            font-weight: bold;
+            color: coral;
+            font-style: normal;
+            display: flex;
+            justify-content: center;
+        }
+
+        .enhanced .logo {
+            display: inline-flex;
+        }
+
+        nav input[type='checkbox']:checked~ul {
+            display: block;
+        }
+
+        @media(min-width: 34em) {
+            nav li {
+                width: initial;
+            }
+        }
+
+        .hamburger-menu {
+            display: none;
+        }
+
+        .enhanced .hamburger-menu {
+            display: inline-flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-left: auto;
+            width: 4em;
+            border: none;
+            background-color: transparent;
+        }
+
+        @media (min-width: 34em) {
+            .enhanced .hamburger-menu {
+                display: none;
+            }
+        }
+
+        /*animate the hamburger to an X*/
+
+        .enhanced .hamburger-menu.active div:first-of-type {
+            transform-origin: left;
+            transform: rotate(35deg);
+        }
+
+        .enhanced .hamburger-menu.active div:last-of-type {
+            transform-origin: left;
+            transform: rotate(-35deg);
+        }
+
+        .enhanced .hamburger-menu.active div:nth-of-type(2) {
+            background-color: transparent;
+        }
+
+
+        /*hamburger icon*/
+
+        .enhanced .hamburger-menu div {
+            height: 10%;
+            width: 100%;
+            background-color: black;
+            transition: var(--material-transition);
+        }
+
+        .enhanced .hamburger-menu div:nth-last-of-type(2) {
+            margin: 0.4rem 0;
+        }
+
+        /************************Main*********************/
+
+        main {
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        main section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        main dialog {
+            max-width: 27em;
+            position: relative;
+            font-size: 1.4em;
+        }
+
+        dialog h2 {
+            padding: 0.7rem;
+            background-color: coral;
+            text-align: center;
+            padding: 0.7rem;
+        }
+
+        dialog p {
+            padding: 1.4rem;
+            font-size: 1.7em;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <i>
+            <a class="logo" href="">BT</a>
+        </i>
+
+        <button class="hamburger-menu" type="button">
+            <div></div>
+            <div></div>
+            <div></div>
+        </button>
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="">Request</a>
+                </li>
+                <li>
+                    <a href="">Nano</a>
+                </li>
+                <li>
+                    <a href="">Icon</a>
+                </li>
+                <li>
+                    <a href="">Nex</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <dialog>
+                <h2>cryptocurrency</h2>
+                <p>A cryptocurrency (or crypto currency) is a digital asset designed to work as a medium of exchange that uses
+                    cryptography to secure its transactions, to control the creation of additional units, and to verify the
+                    transfer of assets. </p>
+            </dialog>
+        </section>
+    </main>
+
+    <script>
+        (function () {
+
+            const app = {
+                init: function () {
+                    html.script();
+                    event.menu();
+                }
+            }
+
+            const html = {
+                //If the html uses javascipt than the no-script will be remove
+                script: function () {
+                    document.querySelector('header').classList.add('enhanced')
+                },
+                menu: function () {
+                    document.querySelector('header nav').classList.toggle('active');
+                    document.querySelector('header button').classList.toggle('active');
+                }
+
+            }
+
+            const event = {
+                menu: function () {
+                    document.querySelector('header  button').addEventListener('click', function () {
+                        html.menu()
+                    })
+                }
+            }
+
+            app.init();
+
+        })();
+    </script>
+</body>
+
+</html>

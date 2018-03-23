@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Popup</title>
+    <style>
+
+        :root{
+            --material-shaduw-1: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            --material-shaduw-2: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+            --material-trasition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        main{
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main div{
+            display: flex;
+            flex-wrap: wrap;
+            background-color: antiquewhite;
+            text-decoration: none;
+            max-width: 20em;
+        }
+
+        .pop-up-button{
+            text-decoration: none;
+            font-size: 3em;
+            padding: 2rem;
+            display: flex;
+            width: 100%;
+            transition: var(--material-trasition);
+            box-shadow: var(--material-shaduw-1);
+        }
+        
+        .pop-up-button:hover, .pop-up-button:focus {
+            box-shadow: var(--material-shaduw-2);
+        }
+
+        .pop-up{
+            display: none;
+        }
+
+        .pop-up.active{
+            display: block;
+        }
+
+        dialog{
+            padding: 1rem;
+            max-width: 20em;
+            position: initial;
+        }
+
+        dialog detail{
+            display: block;
+        }
+        
+    </style>
+</head>
+<body>
+    <main>
+        <div>
+            <a class="pop-up-button" href="pop_up_page.html">Pop Up Icon</a>
+            <div class="pop-up">
+                <h2>Pop up</h2>
+                <p>
+                    ICONex is ICON's Wallet supporting ICX and various cryptocurrencies.
+                    ICONex boasts faster transactions, secure payments, and liquid exchange across multiple cryptocurrencies with user-friendly UX and UI.
+                </p>
+            </div>
+
+            <!-- <dialog id="dialog">
+                    <h2>Pop up</h2>
+                    <detail>
+                            ICONex is ICON's Wallet supporting ICX and various cryptocurrencies.
+                            ICONex boasts faster transactions, secure payments, and liquid exchange across multiple cryptocurrencies with user-friendly UX and UI.
+                    </detail>
+
+                    <button type="button">
+                        Close
+                    </button>
+            </dialog> -->
+        </div>
+    </main>
+
+    <script>
+            var dialogButton = document.querySelector('.pop-up-button');
+            var dialogButtonPop = document.querySelector('.pop-up')
+            //enhanced pop-up
+            (function(){
+                dialogButton.href = '#';
+            })()
+
+            //show pop-up on clicks
+            // dialogButton.addEventListener('click', function(){
+            //     document.querySelector('.pop-up').classList.toggle('active')
+            // })
+
+            dialogButton.addEventListener('click', function(e) {
+                console.log(e)
+                dialogButtonPop.classList.toggle('active')
+            })
+    </script>
+</body>
+</html>
