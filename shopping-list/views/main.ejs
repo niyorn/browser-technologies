@@ -1,0 +1,25 @@
+<%- include partials/head.ejs %>
+<header>
+    <form action="/" method="POST">
+        <label for="input">
+                 Input item to to do list
+        </label>
+        <input aria-labelledby="input" id="input" type="text" name="listItem" autofocus>
+        <button type="submit">Add</button>
+    </form>
+</header>
+
+<main>
+    <ul>
+        <%if(items.length != 0){%>
+       <% items.forEach(function(i){%>
+            <li><%=i.item%>
+                <form action="/delete" method="POST">
+                    <button type="submit" name="delete" value="<%=i.id%>">Delete</button>
+                </form>
+            </li>
+       <%})}%>
+    </ul>
+
+</main>
+<%- include partials/tail.ejs %>

@@ -1,0 +1,33 @@
+{
+  "name": "amsterdam_tram_and_metro",
+  "version": "1.0.0",
+  "description": "A shpopping list",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niyorn/performance-matters-server-side.git"
+  },
+  "keywords": [
+    "serverside",
+    "performance"
+  ],
+  "author": "Chanakarn Niyornram",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/niyorn/performance-matters-server-side/issues"
+  },
+  "homepage": "https://github.com/niyorn/performance-matters-server-side#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.2"
+  }
+}

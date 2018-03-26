@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Chanakarn Niyornram">
+    <meta name="description" content="A to do list">
+    <title>Amsterdam metro en tramlijnen</title>
+    <link rel="manifest" href="../manifest/manifest.json">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+    <style>
+    :root{
+        --material-shaduw-1: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        --material-shaduw-2: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        --material-shaduw-3: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        --material-shaduw-4: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    
+        --material-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+        --primary-color: #c6dbf6;
+        --color-add: #81C784;
+        --color-delete: #FF8A65;
+    }
+    
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html, body{
+        height: 100%;
+        font-family: 'Robot', sans-serif;
+    }
+
+    body{
+        background-color: rgb(240, 240, 240);
+    }
+
+    header{
+        padding: 2rem;
+        background-color: var(--primary-color);
+        position: relative;
+        position: sticky;
+        top: 0;
+    }
+
+    header label{
+        display: none;
+    }
+
+    button{
+        border: none;
+        font-size: 2em;
+        font-weight: bold;
+        font-size: 1em;
+        box-shadow: var(--material-shaduw-1);
+        transition: var(--material-transition);
+        outline: none;
+    }
+
+    button:hover, button:focus{
+        box-shadow: var(--material-shaduw-4);
+    }
+
+    header form{
+        display: flex;
+        box-shadow: var(--material-shaduw-4);
+    }
+
+    header form input{
+        width: 100%;
+        font-size: 4em;
+        font-weight: bold;
+        padding: 1rem;
+        text-align: center;
+        border: none;
+        outline: none;
+    }
+
+    header form button{
+        font-size: 3em;
+        padding: 2rem;
+        background-color: var(--color-add);
+    }
+
+    main{
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+
+    main ul{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+    }
+
+    main li{
+        width: 100%;
+        display: flex;
+        background-color: #fff;
+        margin-bottom: 0.4rem;
+        align-items: center;
+        padding-left: 2rem;
+        font-size: 2em;
+    }
+
+    main li form{
+        margin-left: auto;
+    }
+
+    main li button{
+        padding: 2rem;
+        box-shadow: var(--material-shaduw-1);
+        background-color: var(--color-delete);d
+    }
+
+
+    </style>    
+</head>
+<body>
