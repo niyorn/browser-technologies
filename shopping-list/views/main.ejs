@@ -13,13 +13,15 @@
     <ul>
         <%if(items.length != 0){%>
        <% items.forEach(function(i){%>
-            <li><%=i.item%>
+            <li draggable="true"><%=i.item%>
                 <form action="/delete" method="POST">
                     <button type="submit" name="delete" value="<%=i.id%>">Delete</button>
                 </form>
             </li>
        <%})}%>
     </ul>
+
+    <ul class="drop-zone"></ul>
 
 </main>
 <%- include partials/tail.ejs %>

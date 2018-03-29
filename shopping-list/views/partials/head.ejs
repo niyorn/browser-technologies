@@ -18,7 +18,7 @@
     
         --material-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 
-        --primary-color: #c6dbf6;
+        --primary-color:#F06292;
         --color-add: #81C784;
         --color-delete: #FF8A65;
     }
@@ -29,13 +29,20 @@
         box-sizing: border-box;
     }
 
-    html, body{
+    html{
         height: 100%;
         font-family: 'Robot', sans-serif;
     }
 
     body{
         background-color: rgb(240, 240, 240);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header, main{
+        max-width: 55em;
     }
 
     header{
@@ -44,6 +51,7 @@
         position: relative;
         position: sticky;
         top: 0;
+        width: 100%;
     }
 
     header label{
@@ -71,17 +79,22 @@
 
     header form input{
         width: 100%;
-        font-size: 4em;
+        font-size: 1em;
         font-weight: bold;
         padding: 1rem;
         text-align: center;
         border: none;
         outline: none;
     }
+    @media (min-width: 54em){
+        header form input{
+            font-size: 4em;
+        }
+    }
 
     header form button{
-        font-size: 3em;
-        padding: 2rem;
+        font-size: 2em;
+        padding: 1rem 2rem;
         background-color: var(--color-add);
     }
 
@@ -89,8 +102,9 @@
         display: flex;
         flex-direction: column;
         padding: 2rem;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.04);
     }
-
 
     main ul{
         display: flex;
@@ -102,23 +116,42 @@
         width: 100%;
         display: flex;
         background-color: #fff;
-        margin-bottom: 0.4rem;
+        margin-bottom: 1rem;
         align-items: center;
         padding-left: 2rem;
-        font-size: 2em;
+        font-size: 1.2em;
+        cursor: move;
     }
+    @media (min-width: 50em){
+        main li{
+            font-size: 2em;
+        }
+    }
+    main li:last-of-type{
+        animation: slide-in 0.4s;
+    }
+
+    @keyframes slide-in {
+        from{
+            transform: translateY(-2.4em);
+            opacity: 0;
+        }
+        to{
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
 
     main li form{
         margin-left: auto;
     }
 
     main li button{
-        padding: 2rem;
+        padding: 1rem;
         box-shadow: var(--material-shaduw-1);
-        background-color: var(--color-delete);d
+        background-color: var(--color-delete);
     }
-
-
     </style>    
 </head>
 <body>

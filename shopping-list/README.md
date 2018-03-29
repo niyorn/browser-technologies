@@ -32,3 +32,5 @@ Kies één van deze use cases. Combineren mag ook. De aangeboden Browser Technol
 7. Ik wil kunnen beatboxen! - Web Audio
 8. Ik wil tegen iemand anders een spelletje Pong spelen - Multi touch
 
+Bron: drag and drop switch list
+http://www.syntaxxx.com/rearranging-web-page-items-with-html5-drag-and-drop
