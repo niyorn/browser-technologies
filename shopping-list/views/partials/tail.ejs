@@ -1,39 +1,46 @@
 <script>
-    let source;
+    (function () {
+        const app = {
+            init: function () {
+                dragAndDrop.event()
+            }
+        }
 
-    let list = document.querySelectorAll('main li');
+        const dragAndDrop = {
+            event: function () {
+                let list = document.querySelectorAll('main li');
+                let self = this;
+                list.forEach(function (i) {
+                    i.addEventListener('dragstart', (item) => {
+                        self.dragStart(item)
+                    })
+                    i.addEventListener('dragover', (item) => {
+                        self.dragOver(item)
+                    })
+                    i.addEventListener('drop', (item) => {
+                        self.dropItem(item)
+                    })
+                })
+            },
+            dragStart: function (ev) {
+                ev.dataTransfer.setData('text', ev.target.innerHTML)
+                this.source = ev.target;
+            },
+            dragOver: function (ev) {
+                ev.preventDefault()
+            },
+            dropItem: function (ev) {
+                ev.preventDefault()
+                let data = ev.dataTransfer.getData("text")
+                this.source.innerHTML = ev.target.innerHTML
+                ev.target.innerHTML = data;
+            },
+            source: {}
+        }
 
-        list.forEach(function(i){
-        i.addEventListener('dragstart', function(item){
-            dragStart(item)
-        })
-        i.addEventListener('dragover',function(item){
-            dragOver(item)
-        })
-        i.addEventListener('drop', function(item){
-            dropZone(item)
-        })
-    })
-
-    function dragStart(ev) {
-        ev.dataTransfer.setData('text', ev.target.innerHTML)
-        source = ev.target;
-    }
-
-    function dragOver(ev) {
-        ev.preventDefault()
-        
-    }
-
-    function dropZone(ev) {
-        ev.preventDefault()
-        let data = ev.dataTransfer.getData("text")
-        ev.dataTransfer.dropEffect = 'move'
-        console.log(data)
-        source.innerHTML = ev.target.innerHTML
-        ev.target.innerHTML = data;
-    }
-
+        app.init()
+    })()
 </script>
 </body>
+
 </html>
