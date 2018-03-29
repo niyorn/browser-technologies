@@ -2,42 +2,43 @@
     (function () {
         const app = {
             init: function () {
-                dragAndDrop.event()
+                let items = document.querySelectorAll('main li');
+                items.forEach(function (i) {
+                    i.addEventListener('dragstart', (item) => {
+                        dragAndDrop.dragStart(item)
+                    })
+                    i.addEventListener('dragover', (item) => {
+                        dragAndDrop.dragOver(item)
+                    })
+                    i.addEventListener('drop', (item) => {
+                        dragAndDrop.dropItem(item)
+                    })
+                })
             }
         }
 
         const dragAndDrop = {
-            event: function () {
-                let list = document.querySelectorAll('main li');
-                let self = this;
-                list.forEach(function (i) {
-                    i.addEventListener('dragstart', (item) => {
-                        self.dragStart(item)
-                    })
-                    i.addEventListener('dragover', (item) => {
-                        self.dragOver(item)
-                    })
-                    i.addEventListener('drop', (item) => {
-                        self.dropItem(item)
-                    })
-                })
-            },
             dragStart: function (ev) {
+                //set data ready for transfer
                 ev.dataTransfer.setData('text', ev.target.innerHTML)
                 this.source = ev.target;
             },
             dragOver: function (ev) {
+                //window dont allow item to be dropped on elements
+                //this is to prevend the prevention from windows
                 ev.preventDefault()
             },
             dropItem: function (ev) {
                 ev.preventDefault()
                 let data = ev.dataTransfer.getData("text")
-                this.source.innerHTML = ev.target.innerHTML
+                //Swap data 
+                this.source.innerHTML = ev.target.innerHTML 
                 ev.target.innerHTML = data;
             },
             source: {}
         }
-
+        
+        //start function
         app.init()
     })()
 </script>
