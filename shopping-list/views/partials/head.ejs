@@ -59,13 +59,22 @@
     }
 
     button{
+        padding: 16px;
+        padding: 1rem;
+        background-color: red;
+    }
+
+    button{
         border: none;
-        font-size: 2em;
-        font-weight: bold;
         font-size: 1em;
+        font-weight: bold;
         box-shadow: var(--material-shaduw-1);
         transition: var(--material-transition);
         outline: none;
+    }
+
+    li{
+        margin-top: 16px;
     }
 
     button:hover, button:focus{
@@ -81,6 +90,7 @@
         width: 100%;
         font-size: 1em;
         font-weight: bold;
+        padding: 16px;
         padding: 1rem;
         text-align: center;
         border: none;
@@ -88,7 +98,7 @@
     }
     @media (min-width: 54em){
         header form input{
-            font-size: 4em;
+            font-size: 3em;
         }
     }
 
@@ -102,6 +112,7 @@
     main{
         display: flex;
         flex-direction: column;
+        padding: 32px;
         padding: 2rem;
         width: 100%;
         background-color: rgba(0, 0, 0, 0.04);
@@ -117,8 +128,10 @@
         width: 100%;
         display: flex;
         background-color: #fff;
+        margin-bottom: 16px;
         margin-bottom: 1rem;
         align-items: center;
+        padding-left: 32px;
         padding-left: 2rem;
         font-size: 1.2em;
         cursor: move;
@@ -149,7 +162,7 @@
     }
 
     main li button{
-        padding: 18px;
+        padding: 16px;
         padding: 1rem;
         box-shadow: var(--material-shaduw-1);
         background-color: red;
