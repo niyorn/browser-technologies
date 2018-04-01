@@ -34,23 +34,6 @@ localhost:4000
 ![To do application](../readme-assets/ie9-test.PNG)
 
 The core functionality still works, the user is still able to add item to the list. But the color and the layout doesn't.
-
-## Terminology
-
-### Feature detection
-Feature detection involves working out whether a browser supports a certain block of code, and running different code dependent on whether it does (or doesn't), so that the browser can always provide a working experience rather crashing/erroring in some browsers. - [MDN](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Feature_detection)
-
-```javascript
-if (navigator.geolocation) {
- // detect users location here B-) and do something awesome
-}
-```
-### Modernizer
-Modernizr is a small piece of JavaScript code that automatically detects the availability of next-generation web technologies in your user’s browsers. Rather than blacklisting entire ranges of browsers based on “UA sniffing,” Modernizr uses feature detection to allow you to easily tailor your user’s experiences based on the actual capabilities of their browser.- [Rlyn Ben](https://medium.com/@rlynjb/js-interview-question-what-s-the-difference-between-feature-detection-feature-inference-and-76d2e4956a9b)
-
-
-
-
 ### Fallback
 A fallback is added to give the color more style.
 ```html
@@ -61,7 +44,18 @@ A fallback is added to give the color more style.
 ```
 ![To do application](../readme-assets/ie9-enhanced.PNG)
 
-also the browser doesn't support the Let and Const of ES6, so I've changed those back to Var
+also the browser doesn't support the Let and Const of ES6, so I've changed those back to Var.
+## Terminology
+### Feature detection
+Feature detection involves working out whether a browser supports a certain block of code, and running different code dependent on whether it does (or doesn't), so that the browser can always provide a working experience rather crashing/erroring in some browsers. - [MDN](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Feature_detection)
+
+```javascript
+if (navigator.geolocation) {
+ // detect users location here B-) and do something awesome
+}
+```
+### Modernizer
+Modernizr is a small piece of JavaScript code that automatically detects the availability of next-generation web technologies in your user’s browsers. Rather than blacklisting entire ranges of browsers based on “UA sniffing,” Modernizr uses feature detection to allow you to easily tailor your user’s experiences based on the actual capabilities of their browser.- [Rlyn Ben](https://medium.com/@rlynjb/js-interview-question-what-s-the-difference-between-feature-detection-feature-inference-and-76d2e4956a9b)
 
 
 
