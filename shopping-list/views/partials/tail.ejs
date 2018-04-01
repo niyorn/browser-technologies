@@ -1,8 +1,10 @@
 <script>
     (function () {
-        const app = {
+
+        if(document.querySelector && document.addEventListener){
+            var app = {
             init: function () {
-                let items = document.querySelectorAll('main li');
+                var items = document.querySelectorAll('main li');
                 items.forEach(function (i) {
                     i.addEventListener('dragstart', (item) => {
                         dragAndDrop.dragStart(item)
@@ -17,7 +19,8 @@
             }
         }
 
-        const dragAndDrop = {
+        var dragAndDrop = {
+
             dragStart: function (ev) {
                 //set data ready for transfer
                 ev.dataTransfer.setData('text', ev.target.innerHTML)
@@ -34,12 +37,13 @@
                 //Swap data 
                 this.source.innerHTML = ev.target.innerHTML 
                 ev.target.innerHTML = data;
-            },
-            source: {}
+            }
         }
         
-        //start function
         app.init()
+        }else{
+            console.log('browser doesnt have enhancemet')
+        }
     })()
 </script>
 </body>
