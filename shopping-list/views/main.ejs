@@ -5,7 +5,7 @@
                  Input item to to do list
         </label>
         <input aria-labelledby="input" id="input" type="text" name="listItem" autofocus>
-        <button type="submit">Add</button>
+        <button class="button-add" type="submit">Add</button>
     </form>
 </header>
 
@@ -13,9 +13,10 @@
     <ul>
         <%if(items.length != 0){%>
        <% items.forEach(function(i){%>
-            <li draggable="true"><%=i.item%>
+            <li draggable="true">
+                <span class="item-text"><%=i.item%></span>
                 <form action="/delete" method="POST">
-                    <button type="submit" name="delete" value="<%=i.id%>">Delete</button>
+                    <button class="button-delete" type="submit" name="delete" value="<%=i.id%>">Delete</button>
                 </form>
             </li>
        <%})}%>

@@ -30,6 +30,130 @@ localhost:4000
 
 ## Test
 
+### IE8
+![To do application on IE8](../readme-assets/ie8-test.GIF)
+
+When testing on IE8 the core function still works, that is adding item to a list and remove them if needed be. 
+
+The styling need some improvement to consider it acceptable. Those are:
+
+- Color to differenciate the add and the delete button
+- More spacing between items, so that the user knows it's not the same item
+- Hover state on the button, to indicate that the buttons are clickable.
+
+#### Improvement
+__Color__
+
+When we're applying the styling, we're applying them in nested manner like so.
+
+```css
+    header form button{
+        font-size: 2em;
+        padding: 1rem 2rem;
+        background-color: green;
+        background-color: var(--color-add);
+    }
+```
+Because those element doesn't exist yet in IE8, the styling doesn't apply. To fix this we'll add classes to the button instead:
+
+```css
+    .button-add{
+        font-size: 2em;
+        padding: 1rem 2rem;
+        background-color: green;
+        background-color: var(--color-add);
+    }
+```
+
+__Result__
+
+![IE8 added color](../readme-assets/ie8-improved-color.png)
+
+__Spacing__
+
+When we're applying our margin and padding, we're doing that with the *rem* size. Because IE8 doesn't support this, the styling will not apply. To fix this we'll need to add a fallback if the rem size doesn't work.
+
+```css
+    .button-add{
+        font-size: 2em;
+        padding: 16px 32px;
+        padding: 1rem 2rem;
+        background-color: green;
+        background-color: var(--color-add);
+    }
+```
+__Result__
+
+![IE8 added color](../readme-assets/ie8-improved-spacing.png)
+
+__Hover__
+
+When hovering over the button no indication is used to give feedback to the user that the buttons are clickable. This is because we're using a css variable instead and this feature is not avaible in IE8, also box-shaduw doesn't exist.
+
+```html
+   button:hover, button:focus{
+        box-shadow: var(--material-shaduw-4);
+    }
+```
+
+Instead we'll using a simple indication that the button are clickable by applying a pointer and a border when hoverd over the buttons.
+
+```html
+   button:hover, button:focus{
+        cursor: pointer;
+        border: solid 5px black;
+    }
+```
+
+__Result__
+
+![IE8 added hover state](../readme-assets/ie8-improved-hover.png)
+
+__Layout__
+
+What we now have is that the buttons are below the item, instead we want in next to the item. 
+
+After applying a float fallback this happened
+``` html
+li{
+  float: left;
+}
+```
+
+![To do application](../readme-assets/ie8-error-float.PNG)
+
+this happened because we're applying the float on whole element instead only on the text. To do this we'll need to wrap the text in a span and than apply a float attribute to it.
+
+
+*EJS*
+```jsx
+    <li draggable="true">
+      <span class="item-text"><%=i.item%></span>
+      <form action="/delete" method="POST">
+        <button class="button-delete" type="submit" name="delete" value="<%=i.id%>">Delete</button>
+      </form>
+    </li>
+```
+
+*CSS*
+```css
+.item-text{
+  float:left
+}
+```
+__Result__
+
+![IE8 added hover state](../readme-assets/ie8-improved-layout.png)
+
+
+
+
+
+
+
+
+
+
 ### IE9
 ![To do application](../readme-assets/ie9-test.PNG)
 
