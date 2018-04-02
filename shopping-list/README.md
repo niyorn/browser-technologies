@@ -143,7 +143,7 @@ this happened because we're applying the float on whole element instead only on 
 ```
 __Result__
 
-![IE8 added hover state](/readme-assets/ie8-improved-layout.PNG)
+![IE8 added hover state](readme-assets/ie8-improved-layout.PNG)
 
 
 
