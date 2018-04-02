@@ -1,6 +1,6 @@
 # To Do Application
 
-![To do application](../readme-assets/core.gif)
+![To do application](readme-assets/core.gif)
 
 This application allow user to make an a simple todo list. The core functionality is rendered serverside, so even if javascript is disabled the To Do is still functional.
 
@@ -8,7 +8,7 @@ This application allow user to make an a simple todo list. The core functionalit
 
 When javacript is enabled the user is able to reoder de list based on priority.
 
-![To do application](../readme-assets/enhanced.gif)
+![To do application](readme-assets/enhanced.gif)
 
 ## Install
 
@@ -31,7 +31,7 @@ localhost:4000
 ## Test
 
 ### IE8
-![To do application on IE8](../readme-assets/ie8-test.GIF)
+![To do application on IE8](readme-assets/ie8-test.gif)
 
 When testing on IE8 the core function still works, that is adding item to a list and remove them if needed be. 
 
@@ -67,7 +67,7 @@ Because those element doesn't exist yet in IE8, the styling doesn't apply. To fi
 
 __Result__
 
-![IE8 added color](../readme-assets/ie8-improved-color.png)
+![IE8 added color](readme-assets/ie8-improved-color.png)
 
 __Spacing__
 
@@ -84,7 +84,7 @@ When we're applying our margin and padding, we're doing that with the *rem* size
 ```
 __Result__
 
-![IE8 added color](../readme-assets/ie8-improved-spacing.png)
+![IE8 added color](readme-assets/ie8-improved-spacing.png)
 
 __Hover__
 
@@ -107,7 +107,7 @@ Instead we'll using a simple indication that the button are clickable by applyin
 
 __Result__
 
-![IE8 added hover state](../readme-assets/ie8-improved-hover.png)
+![IE8 added hover state](readme-assets/ie8-improved-hover.png)
 
 __Layout__
 
@@ -120,7 +120,7 @@ li{
 }
 ```
 
-![To do application](../readme-assets/ie8-error-float.PNG)
+![To do application](readme-assets/ie8-error-float.png)
 
 this happened because we're applying the float on whole element instead only on the text. To do this we'll need to wrap the text in a span and than apply a float attribute to it.
 
@@ -143,7 +143,7 @@ this happened because we're applying the float on whole element instead only on 
 ```
 __Result__
 
-![IE8 added hover state](../readme-assets/ie8-improved-layout.png)
+![IE8 added hover state](/readme-assets/ie8-improved-layout.png)
 
 
 
@@ -155,7 +155,7 @@ __Result__
 
 
 ### IE9
-![To do application](../readme-assets/ie9-test.PNG)
+![To do application](readme-assets/ie9-test.png)
 
 The core functionality still works, the user is still able to add item to the list. But the color and the layout doesn't.
 ### Fallback
