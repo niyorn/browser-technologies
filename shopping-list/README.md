@@ -67,7 +67,7 @@ Because those element doesn't exist yet in IE8, the styling doesn't apply. To fi
 
 __Result__
 
-![IE8 added color](readme-assets/ie8-improved-color.png)
+![IE8 added color](readme-assets/ie8-improved-color.PNG)
 
 __Spacing__
 
@@ -84,7 +84,7 @@ When we're applying our margin and padding, we're doing that with the *rem* size
 ```
 __Result__
 
-![IE8 added color](readme-assets/ie8-improved-spacing.png)
+![IE8 added color](readme-assets/ie8-improved-spacing.PNG)
 
 __Hover__
 
@@ -107,7 +107,7 @@ Instead we'll using a simple indication that the button are clickable by applyin
 
 __Result__
 
-![IE8 added hover state](readme-assets/ie8-improved-hover.png)
+![IE8 added hover state](readme-assets/ie8-improved-hover.PNG)
 
 __Layout__
 
@@ -120,7 +120,7 @@ li{
 }
 ```
 
-![To do application](readme-assets/ie8-error-float.png)
+![To do application](readme-assets/ie8-error-float.PNG)
 
 this happened because we're applying the float on whole element instead only on the text. To do this we'll need to wrap the text in a span and than apply a float attribute to it.
 
@@ -143,7 +143,7 @@ this happened because we're applying the float on whole element instead only on 
 ```
 __Result__
 
-![IE8 added hover state](/readme-assets/ie8-improved-layout.png)
+![IE8 added hover state](/readme-assets/ie8-improved-layout.PNG)
 
 
 
@@ -155,7 +155,7 @@ __Result__
 
 
 ### IE9
-![To do application](readme-assets/ie9-test.png)
+![To do application](readme-assets/ie9-test.PNG)
 
 The core functionality still works, the user is still able to add item to the list. But the color and the layout doesn't.
 ### Fallback
