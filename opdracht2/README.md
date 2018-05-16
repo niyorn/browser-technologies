@@ -30,10 +30,5 @@ The hamburger is created without javascript in mind. So even when there is no ja
     <img src='readme-assets/hamburger-menu-resize-with-javascript.gif' alt='Hamburger menu resized without enabling javascript'>
 </details>
 
-
-
-**Hamburger menu:**https://niyorn.github.io/browser-technologies/opdracht2/Hamburger_menu/index.html
-**Pop-up:** https://niyorn.github.io/browser-technologies/opdracht2/Pop_up/index.html
-
 ### Dialog tag
 https://www.w3schools.com/TAGS/tag_dialog.asp
