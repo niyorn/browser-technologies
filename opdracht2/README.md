@@ -22,12 +22,12 @@ The hamburger is created without javascript in mind. So even when there is no ja
 
 <details>
     <summary>Hamburger menu without javscscript</summary>
-    <img src='readme-assets/hamburger-menu-resize-without-javascript.GIF' alt='Hamburger menu resized without enabling javascript'>
+    <img src='readme-assets/hamburger-menu-resize-without-javascript.gif' alt='Hamburger menu resized without enabling javascript'>
 </details>
 
 <details>
     <summary>Hamburger menu with javscscript</summary>
-    <img src='readme-assets/hamburger-menu-resize-with-javascript.GIF' alt='Hamburger menu resized without enabling javascript'>
+    <img src='readme-assets/hamburger-menu-resize-with-javascript.gif' alt='Hamburger menu resized without enabling javascript'>
 </details>
 
 
