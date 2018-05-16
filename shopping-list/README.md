@@ -146,27 +146,12 @@ __Result__
 ![IE8 added hover state](readme-assets/ie8-improved-layout.PNG)
 
 
-
-
-
-
-
-
-
-
 ### IE9
-![To do application](readme-assets/ie9-test.PNG)
+![To do application](readme-assets/ie9-test.gif)
 
-The core functionality still works, the user is still able to add item to the list. But the color and the layout doesn't.
-### Fallback
-A fallback is added to give the color more style.
-```html
-    main li button{
-        background-color: red;
-        background-color: var(--color-delete);
-    }
-```
-![To do application](../readme-assets/ie9-enhanced.PNG)
+The core function works and the layout is acceptable.
+
+ 
 
 also the browser doesn't support the Let and Const of ES6, so I've changed those back to Var.
 ## Terminology
