@@ -30,5 +30,20 @@ The hamburger is created without javascript in mind. So even when there is no ja
     <img src='readme-assets/hamburger-menu-resize-with-javascript.gif' alt='Hamburger menu resized without enabling javascript'>
 </details>
 
+### CSS fallback
+The fallback that is used to create a functional layout for all browsers.
+
+#### CSS initual value
+When setting the width of the nav bar a initial value is used to get the initial value of an element. When the test is done on IE, our layout broke and the navigation doesn't take whole width of the browser. In short IE doesn't support the css value *initial*.
+
+```css
+    nav li {
+        width: 100%;
+        width: initial;
+    }
+```
+
+
+
 ### Dialog tag
 https://www.w3schools.com/TAGS/tag_dialog.asp
