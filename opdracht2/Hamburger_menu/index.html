@@ -271,6 +271,18 @@
     </header>
 
     <script>
+        (function featureDection() {
+
+            //Check support for querySelector
+            if (document.querySelector) {
+                console.log('support querySelector')
+                app.init();
+            } else {
+                console.log('browsers does not support querySelector');
+            }
+        })();
+
+
         const app = {
             init: function () {
                 html.script();
@@ -287,7 +299,6 @@
                 document.querySelector('header nav').classList.toggle('active');
                 document.querySelector('header button').classList.toggle('active');
             }
-
         }
 
         const event = {
@@ -297,20 +308,6 @@
                 })
             }
         }
-
-        (function featureDection() {
-
-            //Check support for querySelector
-            if (document.querySelector) {
-                console.log('support querySelector')
-                if (window.let) {
-                    console.log('support let')
-                }
-                app.init();
-            } else {
-                console.log('browsers does not support querySelector');
-            }
-        })();
     </script>
 </body>
 
