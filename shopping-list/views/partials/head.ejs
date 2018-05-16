@@ -47,6 +47,7 @@
 
     header{
         padding: 2rem;
+        background-color: #F06292;
         background-color: var(--primary-color);
         position: relative;
         position: sticky;
@@ -66,17 +67,13 @@
         transition: var(--material-transition);
         outline: none;
     }
-
-    button:hover, button:focus{
-        cursor: pointer;
-        border: solid 5px black;
-    }
-
+    
     li{
         margin-bottom: 16px;
     }
 
     button:hover, button:focus{
+        cursor: pointer;
         box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
         box-shadow: var(--material-shaduw-4);
     }
@@ -87,7 +84,7 @@
     }
 
     header form input{
-        width: 100%;
+        width: 67%;
         font-size: 1em;
         font-weight: bold;
         padding: 16px;
@@ -99,15 +96,22 @@
     @media (min-width: 54em){
         header form input{
             font-size: 3em;
+            width: 82%;
         }
     }
 
     .button-add{
         font-size: 2em;
         padding: 16px 32px;
+        width: 33%;
         padding: 1rem 2rem;
-        background-color: green;
+        background-color: #81C784;
         background-color: var(--color-add);
+    }
+    @media (min-width: 54em) {
+        .button-add{
+            width: 18%;
+        }
     }
 
     main{
@@ -171,7 +175,7 @@
         padding: 16px;
         padding: 1rem;
         box-shadow: var(--material-shaduw-1);
-        background-color: red;
+        background-color: #F06292;
         background-color: var(--color-delete);
     }
     </style> 
