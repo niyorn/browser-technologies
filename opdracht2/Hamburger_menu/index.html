@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -270,46 +271,46 @@
     </header>
 
     <script>
+        const app = {
+            init: function () {
+                html.script();
+                event.menu();
+            }
+        }
 
-            (function featureDection () {
-
-                //Check support for querySelector
-                if(document.querySelector){
-                    console.log('supported')
-                }
-                else{
-                    console.log('browsers does not support querySelector');
-                }
-            })();
-
-            const app = {
-                init: function () {
-                    html.script();
-                    event.menu();
-                }
+        const html = {
+            //If the html uses javascipt than the no-script will be remove
+            script: function () {
+                document.querySelector('header').classList.add('enhanced')
+            },
+            menu: function () {
+                document.querySelector('header nav').classList.toggle('active');
+                document.querySelector('header button').classList.toggle('active');
             }
 
-            const html = {
-                //If the html uses javascipt than the no-script will be remove
-                script: function () {
-                    document.querySelector('header').classList.add('enhanced')
-                },
-                menu: function () {
-                    document.querySelector('header nav').classList.toggle('active');
-                    document.querySelector('header button').classList.toggle('active');
-                }
+        }
 
+        const event = {
+            menu: function () {
+                document.querySelector('header  button').addEventListener('click', function () {
+                    html.menu()
+                })
             }
+        }
 
-            const event = {
-                menu: function () {
-                    document.querySelector('header  button').addEventListener('click', function () {
-                        html.menu()
-                    })
+        (function featureDection() {
+
+            //Check support for querySelector
+            if (document.querySelector) {
+                console.log('support querySelector')
+                if (window.let) {
+                    console.log('support let')
                 }
+                app.init();
+            } else {
+                console.log('browsers does not support querySelector');
             }
-
-            app.init();
+        })();
     </script>
 </body>
 
