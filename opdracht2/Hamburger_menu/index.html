@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -301,13 +300,34 @@
             }
         }
 
-        const event = {
-            menu: function () {
-                document.querySelector('header  button').addEventListener('click', function () {
-                    html.menu()
-                })
+            const app = {
+                init: function () {
+                    html.script();
+                    event.menu();
+                }
             }
-        }
+
+            const html = {
+                //If the html uses javascipt than the no-script will be remove
+                script: function () {
+                    document.querySelector('header').classList.add('enhanced')
+                },
+                menu: function () {
+                    document.querySelector('header nav').classList.toggle('active');
+                    document.querySelector('header button').classList.toggle('active');
+                }
+
+            }
+
+            const event = {
+                menu: function () {
+                    document.querySelector('header  button').addEventListener('click', function () {
+                        html.menu()
+                    })
+                }
+            }
+
+            app.init();
     </script>
 </body>
 
