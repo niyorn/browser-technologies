@@ -270,7 +270,17 @@
     </header>
 
     <script>
-        (function () {
+
+            (function featureDection () {
+
+                //Check support for querySelector
+                if(document.querySelector){
+                    console.log('supported')
+                }
+                else{
+                    console.log('browsers does not support querySelector');
+                }
+            })();
 
             const app = {
                 init: function () {
@@ -300,8 +310,6 @@
             }
 
             app.init();
-
-        })();
     </script>
 </body>
 
