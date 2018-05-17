@@ -271,57 +271,51 @@
     </header>
 
     <script>
-        (function featureDection() {
+        'use strict';
+
+        function featureDection() {
 
             //Check support for querySelector
             if (document.querySelector) {
-                console.log('support querySelector')
-                app.init();
+                console.log('support querySelector');
+                return true;
             } else {
                 console.log('browsers does not support querySelector');
+                return false;
             }
-        })();
+        };
 
-
-        const app = {
-            init: function () {
-                html.script();
-                event.menu();
+        if (featureDection()) {
+            var app = {
+                init: function () {
+                    html.script();
+                    event.menu();
+                    console.log('init works')
+                }
             }
+
+            var html = {
+                //If the html uses javascipt than the no-script will be remove
+                script: function () {
+                    document.querySelector('header').classList.add('enhanced')
+                },
+                menu: function () {
+                    document.querySelector('header nav').classList.toggle('active');
+                    document.querySelector('header button').classList.toggle('active');
+                }
+
+            }
+
+            var event = {
+                menu: function () {
+                    document.querySelector('header  button').addEventListener('click', function () {
+                        html.menu()
+                    })
+                }
+            }
+
+            app.init();
         }
-
-        const html = {
-            //If the html uses javascipt than the no-script will be remove
-            script: function () {
-                document.querySelector('header').classList.add('enhanced')
-            },
-            menu: function () {
-                document.querySelector('header nav').classList.toggle('active');
-                document.querySelector('header button').classList.toggle('active');
-            }
-        }
-
-        const html = {
-            //If the html uses javascipt than the no-script will be remove
-            script: function () {
-                document.querySelector('header').classList.add('enhanced')
-            },
-            menu: function () {
-                document.querySelector('header nav').classList.toggle('active');
-                document.querySelector('header button').classList.toggle('active');
-            }
-
-        }
-
-        const event = {
-            menu: function () {
-                document.querySelector('header  button').addEventListener('click', function () {
-                    html.menu()
-                })
-            }
-        }
-
-        app.init();
     </script>
 </body>
 
