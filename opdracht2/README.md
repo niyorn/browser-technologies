@@ -89,6 +89,22 @@ And because we're using the *classList.toggle()* and the *classList.add()* we al
 
 We're using a try/catch instead of if/else because if we're checking it with if/else the if/else will give a undifined back, but we know it does exist. With a try/catch it will trying to execute the function or else it will gives an error.
 
+### addEventListener
+Add lastly we need to check if the browser support the syntax *addEventListener*, because we're checking if the user have clicked on the hamburger menu or not.
+
+```javascript
+    //Check support for addEventListner
+    if(document.addEventListener){
+        console.log('browser support addEventListener');
+        return true;
+    }
+    else{
+        console.log('browser does not support AddEventListner');
+        return false;
+    }
+```                        
+
+
 
 
 ### Dialog tag
