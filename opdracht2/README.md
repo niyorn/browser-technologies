@@ -87,7 +87,7 @@ And because we're using the *classList.toggle()* and the *classList.add()* we al
     }
 ```
 
-We're using a try/catch instead of if/else because if we're checking it with if/else the if/else will give a undifined back, but we know it does exist. With a try/catch it will trying to execute the got else it will gives an error.
+We're using a try/catch instead of if/else because if we're checking it with if/else the if/else will give a undifined back, but we know it does exist. With a try/catch it will trying to execute the function or else it will gives an error.
 
 
 
