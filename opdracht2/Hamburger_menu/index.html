@@ -278,7 +278,27 @@
             //Check support for querySelector
             if (document.querySelector) {
                 console.log('support querySelector');
-                return true;
+
+                var checkClassList = document.querySelector('body').classList;
+
+                if (checkClassList) {
+                    console.log('browser support classlist');
+
+                    try {
+                        checkClassList.add();
+                        checkClassList.toggle();
+
+                        return true;
+                    } catch (err) {
+                        console.log('browser does not support classList.add or classList.toggle');
+                        return false;
+                    }
+
+                } else {
+                    console.log('browser doesnt support classlist')
+                    return false;
+                }
+
             } else {
                 console.log('browsers does not support querySelector');
                 return false;
