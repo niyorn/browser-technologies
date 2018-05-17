@@ -10,10 +10,10 @@ __Link to prototype__
 [Pop up](https://niyorn.github.io/browser-technologies/opdracht2/Pop_up/index.html)
 
 ## Hamburger menu
-The hamburger is often used in a lot of modern site, but would happen if we have javascript disabled. Is the hamburger still functional? If not, how can we make the menu still functional for the people who doesn't have javacript enabled?
+The hamburger menu is often used in a lot of modern site, but would happen if javascript is disabled. Is the hamburger still functional? How can we make the menu still functional for the people who doesn't have javacript enabled?
 
 ### Javascript
-The hamburger is created without javascript in mind. So even when there is no javascript the user is still able to access the menu items. Alternatively the hamburger is only activated when javacript is enabled.
+The hamburger menu is created without javascript in mind. So even when there is no javascript the user is still able to access the menu items. Alternatively the hamburger is only activated when javacript is enabled.
 
 *This line of code only works, because javascript is enabled*
 ```javascript
@@ -45,7 +45,7 @@ When setting the width of the nav bar a initial value is used to get the initial
 #### Let and const
 When I start developing the hamburger menu, I've declared variable with the __let__ and __const__. But I've found out later that not all browsers support this variable declaration and we need to do a feature detection for this syntax. But to my shame, I do not found a way to do this feature detection for this syntax. I've tried a try catch and if/else statement, but the browsers always gives an error when a let is found and will not execute any code further.
 
-To fix this problem I did what I only know and that is changing let and const to var;
+To fix this problem I did what I only know and that is changing let and const to var.
 
 
 #### Classlist
@@ -87,10 +87,10 @@ And because we're using the *classList.toggle()* and the *classList.add()* we al
     }
 ```
 
-We're using a try/catch instead of if/else because if we're checking it with if/else the if/else will give a undifined back, but we know it does exist. With a try/catch it will trying to execute the function or else it will gives an error.
+We're using a try/catch instead of if/else because if we're checking it with if/else the if/else will give a undifined back, but we know it does exist. With a try/catch it will trying to execute the function or else it will give an error.
 
 ### addEventListener
-Add lastly we need to check if the browser support the syntax *addEventListener*, because we're checking if the user have clicked on the hamburger menu or not.
+And lastly we need to check if the browser support the syntax *addEventListener*, because we want to check if the user have clicked on the hamburger menu.
 
 ```javascript
     //Check support for addEventListner
