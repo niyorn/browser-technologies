@@ -277,18 +277,29 @@
 
             //Check support for querySelector
             if (document.querySelector) {
-                console.log('support querySelector');
-
+                console.log('browser support querySelector');
+                
+                //Check support for classList
                 var checkClassList = document.querySelector('body').classList;
-
                 if (checkClassList) {
                     console.log('browser support classlist');
-
+                    
+                    //Check support for classList.add() and classList.toggle()
                     try {
-                        checkClassList.add();
-                        checkClassList.toggle();
+                        checkClassList.add;
+                        checkClassList.toggle;
+                        console.log('browser support classList.toggle and classList.add');
+                        
+                        //Check support for addEventListner
+                        if(document.addEventListener){
+                            console.log('browser support addEventListener');
+                            return true;
+                        }
+                        else{
+                            console.log('browser does not support AddEventListner');
+                            return false;
+                        }
 
-                        return true;
                     } catch (err) {
                         console.log('browser does not support classList.add or classList.toggle');
                         return false;
