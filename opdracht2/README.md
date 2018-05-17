@@ -159,7 +159,3 @@ There is also a fallback for display:flex and that is ofcourse the display:block
         display: flex;
     }
 ```
-
-
-### Dialog tag
-https://www.w3schools.com/TAGS/tag_dialog.asp
