@@ -106,7 +106,7 @@ And lastly we need to check if the browser support the syntax *addEventListener*
 
 
 ## Pop up
-The pop up is a functionaly that is also often used in the web to attract the user attention. But how are we going to attraction the user attention when javascript is disabled?
+The pop up is a functionality that is also often used in the web to attract the user attention. But how are we going to attract the user attention when javascript is disabled?
 
 The solution that I've taken when javascript is disabled is to use the anchor element. When a pop up should be displayed, the user is taken to a new page where the pop up detail is showed.
 
