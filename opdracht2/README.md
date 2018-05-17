@@ -102,10 +102,60 @@ And lastly we need to check if the browser support the syntax *addEventListener*
         console.log('browser does not support AddEventListner');
         return false;
     }
-```                        
+```
 
 
+## Pop up
+The pop up is a functionality that is also often used in the web to attract the user attention. But how are we going to attract the user attention when javascript is disabled?
 
+The solution that I've taken when javascript is disabled is to use the anchor element. When a pop up should be displayed, the user is taken to a new page where the pop up detail is showed.
 
-### Dialog tag
-https://www.w3schools.com/TAGS/tag_dialog.asp
+The enhanced version of this, is showing the pop up on the same page as seen below.
+
+<details>
+    <summary>Pop up without javascript</summary>
+    <img src='readme-assets/pop-up-with-out-javascript.gif' alt='activating pop up without javascript'>
+</details>
+
+<details>
+    <summary>Pop up with javascript</summary>
+    <img src='readme-assets/pop-up-with-javascript.gif' alt='activating pop up with javascript'>
+</details>
+
+As you can see the pop up is almost identical except that when javascript is disabled the pop up is shown on a new page.
+
+### feature detection
+The features we're using are:
+- querySelector
+- classList
+- addEventListener
+
+These are the same features that we've used on our hamburger menu, so we're going use the same code except that for classList toggle we're using the remove function.
+
+```javascript
+try {
+    checkClassList.add;
+    checkClassList.remove;
+    console.log('browser support classList.toggle and classList.add');
+} catch (err) {
+    console.log('browser does not support classList.add or classList.toggle');
+    return false;
+}
+```
+
+### CSS fallback
+
+CSS variable is not supported in all browsers so we're applying a basic styling as fallback where CSS variable is not supported.
+
+```css
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    box-shadow: var(--material-shaduw-2);
+```
+
+There is also a fallback for display:flex and that is ofcourse the display:block.
+```css
+    .pop-up.enabled {
+        display: block;
+        display: flex;
+    }
+```

@@ -1,28 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pop up page</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet">
 
     <style>
-        dialog h2{
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div h2 {
             font-size: 2em;
         }
 
-        dialog p{
+        div p {
             font-size: 1.2em;
+        }
+
+        .pop-up-show {
+            padding: 16px;
+            padding: 1rem;
+            width: 90%;
+            max-width: 400px;
+            background-color: #faebd7;
+            border: solid 10px black;
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        }
+
+        .pop-up-show h2 {
+            margin-bottom: 16px;
+            margin-bottom: 1rem;
+        }
+
+        .pop-up-show a {
+            float: right;
         }
     </style>
 </head>
+
 <body>
-    <diaglog open>
+
+
+    <div class="pop-up-show">
+        <a href="index.html">Close</a>
         <h2>Pop up</h2>
-        <detail>
-                ICONex is ICON's Wallet supporting ICX and various cryptocurrencies.
-                ICONex boasts faster transactions, secure payments, and liquid exchange across multiple cryptocurrencies with user-friendly UX and UI.
-        </detail>
-    </diaglog>
+        <p>
+            Pop-up ads or pop-ups are forms of online advertising on the World Wide Web.[1] A pop-up is a graphical user interface (GUI)
+            display area, usually a small window, that suddenly appears ("pops up") in the foreground of the visual interface.
+        </p>
+    </div>
 </body>
+
 </html>
