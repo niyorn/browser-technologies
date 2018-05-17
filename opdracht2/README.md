@@ -102,7 +102,28 @@ And lastly we need to check if the browser support the syntax *addEventListener*
         console.log('browser does not support AddEventListner');
         return false;
     }
-```                        
+```
+
+
+## Pop up
+The pop up is a functionaly that is also often used in the web to attract the user attention. But how are we going to attraction the user attention when javascript is disabled?
+
+The solution that I've taken when javascript is disabled is to use the anchor element. When a pop up should be displayed, the user is taken to a new page where the pop up detail is showed.
+
+The enhanced version of this, is showing the pop up on the same page as seen below.
+
+<details>
+    <summary>Pop up without javascript</summary>
+    <img src='readme-assets/pop-up-with-out-javascript.gif' alt='activating pop up without javascript'>
+</details>
+
+<details>
+    <summary>Pop up with javascript</summary>
+    <img src='readme-assets/pop-up-with-javascript.gif' alt='activating pop up with javascript'>
+</details>
+
+As you can see the pop up is almost identical except that when javascript is disabled the pop up is shown on a new page.
+
 
 
 
