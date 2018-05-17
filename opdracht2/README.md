@@ -42,6 +42,11 @@ When setting the width of the nav bar a initial value is used to get the initial
         width: initial;
     }
 ```
+#### Let and const
+When I start developing the hamburger menu, I've declared variable with the __let__ and __const__. But I've found out later that not all browsers support this variable declaration and we need to do a feature detection for this syntax. But to my shame, I do not found a way to do this feature detection for this syntax. I've tried a try catch and if/else statement, but the browsers always gives an error when a let is found and will not execute any code further.
+
+To fix this problem I did what I only know and that is changing let and const to var;
+
 
 
 
