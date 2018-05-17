@@ -143,9 +143,22 @@ try {
 }
 ```
 
+### CSS fallback
 
+CSS variable is not supported in all browsers so we're applying a basic styling as fallback where CSS variable is not supported.
 
+```css
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    box-shadow: var(--material-shaduw-2);
+```
 
+There is also a fallback for display:flex and that is ofcourse the display:block.
+```css
+    .pop-up.enabled {
+        display: block;
+        display: flex;
+    }
+```
 
 
 ### Dialog tag
