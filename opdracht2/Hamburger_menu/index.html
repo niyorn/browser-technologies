@@ -90,6 +90,7 @@
         @media (min-width: 34em) {
             nav ul {
                 margin-left: auto;
+                width: 100%;
                 width: initial;
             }
         }
@@ -103,7 +104,6 @@
             align-items: center;
             justify-content: center;
             font-size: 1.7em;
-            width: 100%;
         }
 
         nav a {
@@ -270,28 +270,62 @@
         </nav>
     </header>
 
-    <main>
-        <section>
-            <dialog>
-                <h2>cryptocurrency</h2>
-                <p>A cryptocurrency (or crypto currency) is a digital asset designed to work as a medium of exchange that uses
-                    cryptography to secure its transactions, to control the creation of additional units, and to verify the
-                    transfer of assets. </p>
-            </dialog>
-        </section>
-    </main>
-
     <script>
-        (function () {
+        'use strict';
 
-            const app = {
+        function featureDection() {
+
+            //Check support for querySelector
+            if (document.querySelector) {
+                console.log('browser support querySelector');
+                
+                //Check support for classList
+                var checkClassList = document.querySelector('body').classList;
+                if (checkClassList) {
+                    console.log('browser support classlist');
+                    
+                    //Check support for classList.add() and classList.toggle()
+                    try {
+                        checkClassList.add;
+                        checkClassList.toggle;
+                        console.log('browser support classList.toggle and classList.add');
+                        
+                        //Check support for addEventListner
+                        if(document.addEventListener){
+                            console.log('browser support addEventListener');
+                            return true;
+                        }
+                        else{
+                            console.log('browser does not support AddEventListner');
+                            return false;
+                        }
+
+                    } catch (err) {
+                        console.log('browser does not support classList.add or classList.toggle');
+                        return false;
+                    }
+
+                } else {
+                    console.log('browser doesnt support classlist')
+                    return false;
+                }
+
+            } else {
+                console.log('browsers does not support querySelector');
+                return false;
+            }
+        };
+
+        if (featureDection()) {
+            var app = {
                 init: function () {
                     html.script();
                     event.menu();
+                    console.log('init works')
                 }
             }
 
-            const html = {
+            var html = {
                 //If the html uses javascipt than the no-script will be remove
                 script: function () {
                     document.querySelector('header').classList.add('enhanced')
@@ -303,7 +337,7 @@
 
             }
 
-            const event = {
+            var event = {
                 menu: function () {
                     document.querySelector('header  button').addEventListener('click', function () {
                         html.menu()
@@ -312,8 +346,7 @@
             }
 
             app.init();
-
-        })();
+        }
     </script>
 </body>
 
