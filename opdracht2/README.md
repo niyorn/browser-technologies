@@ -48,6 +48,47 @@ When I start developing the hamburger menu, I've declared variable with the __le
 To fix this problem I did what I only know and that is changing let and const to var;
 
 
+#### Classlist
+Because we're using the classList syntax to add the *enhanced* class for creating the hamburger menu, we're going to check if the browser support this syntax.
+
+```javascript
+    var checkClassList = document.querySelector('body').classList;
+
+    if (checkClassList) {
+        console.log('browser support classlist');
+
+    } else {
+        console.log('browser doesnt support classlist')
+        return false;
+    }
+```
+
+And because we're using the *classList.toggle()* and the *classList.add()* we also need to check if the browser support this syntax.
+
+```javascript
+    var checkClassList = document.querySelector('body').classList;
+
+    if (checkClassList) {
+        console.log('browser support classlist');
+
+        try {
+            checkClassList.add();
+            checkClassList.toggle();
+
+            return true;
+        } catch (err) {
+            console.log('browser does not support classList.add or classList.toggle');
+            return false;
+        }
+
+    } else {
+        console.log('browser doesnt support classlist')
+        return false;
+    }
+```
+
+We're using a try/catch instead of if/else because if we're checking it with if/else the if/else will give a undifined back, but we know it does exist. With a try/catch it will trying to execute the got else it will gives an error.
+
 
 
 ### Dialog tag
