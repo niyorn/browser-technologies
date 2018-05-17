@@ -124,6 +124,26 @@ The enhanced version of this, is showing the pop up on the same page as seen bel
 
 As you can see the pop up is almost identical except that when javascript is disabled the pop up is shown on a new page.
 
+### feature detection
+The features we're using are:
+- querySelector
+- classList
+- addEventListener
+
+These are the same features that we've used on our hamburger menu, so we're going use the same code except that for classList toggle we're using the remove function.
+
+```javascript
+try {
+    checkClassList.add;
+    checkClassList.remove;
+    console.log('browser support classList.toggle and classList.add');
+} catch (err) {
+    console.log('browser does not support classList.add or classList.toggle');
+    return false;
+}
+```
+
+
 
 
 
