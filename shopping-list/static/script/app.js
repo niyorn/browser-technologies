@@ -5,6 +5,7 @@ import {dragAndDrop} from './module/dragAndDrop.js';
 (function () {
     var app = {
         init: function () {
+            //Check if the browser contain some of the feature we need to enhance it, else give the user the normal version
             if (this.featureDectection()) {
                 this.dragAndDrop();
             } else {
@@ -12,7 +13,8 @@ import {dragAndDrop} from './module/dragAndDrop.js';
             }
         },
         featureDectection() {
-            if (feature.querySelector() && feature.addEventListener() && feature.dragAndDrop()) {
+            //Check for the feature we need
+            if (feature.querySelector() && feature.eventListener() && feature.dragAndDrop()) {
                 return true;
             } else {
                 return false;

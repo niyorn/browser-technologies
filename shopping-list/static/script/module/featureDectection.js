@@ -32,7 +32,6 @@ var featureDetection = {
     eventListener: function () {
         //Check support for addEventListner
         if (document.addEventListener) {
-            console.log('browser support addEventListener');
             return true;
         } else {
             console.log('browser does not support AddEventListner');
@@ -40,7 +39,14 @@ var featureDetection = {
         }
     },
     dragAndDrop: function () {
-        console.log('hallo')
+        //based on Modernizer.js
+        //Check if we can drag an element
+        if('draggable' in document.createElement('span')) {
+            return true;            
+        }else{
+            console.log('does not support drag and drop')
+            return false;
+        }
     }
 }
 
