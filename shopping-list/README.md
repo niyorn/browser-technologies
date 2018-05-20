@@ -2,13 +2,33 @@
 
 ![To do application](readme-assets/core.gif)
 
-This application allow user to make an a simple todo list. The core functionality is rendered serverside, so even if javascript is disabled the To Do is still functional.
+This application allow user to make an a simple todo list.
 
 ## Enhanced
 
-When javacript is enabled the user is able to reoder de list based on priority.
+When javacript is enabled, the user is able to reoder the list based on priority.
 
-![To do application](readme-assets/enhanced.gif)
+![To do application](readme-assets/enhanced.gif);
+
+## Functionality
+
+This section will explain what the core functionality of the application is.
+
+### Use scenario
+Katie wants to go the scenario, but got a lot items that she needs. She want to keep track of all of the items.
+
+### Core functionality
+The user scenario suggets that the user wants a way to add item to a list and keep track this by adding new items or removing items that the user already have.
+
+I choose to make this application in Node, because the core functionality of this application is adding an item to a list. Node make this possible even if javascript is disabled.
+
+### enhacement
+The make the experience more enjoyable, we're adding some styling to this application.
+
+### super enhacement
+The super enhacment of this application is to make the items re-order-able. The user is able to drag an item en reoder this item based on priority. So if the user finds a banana more important than an apple, than the user is able to swap the position of these items.
+
+__Core functionality__: adding/removing item from a list
 
 ## Install
 
@@ -27,6 +47,109 @@ The standart port is 4000
 ```
 localhost:4000
 ```
+
+## Feature detection
+>Feature detection involves working out whether a browser supports a certain block of code, and running different code dependent on whether it does (or doesn't), so that the browser can always provide a working experience rather crashing/erroring in some browsers. - [MDN](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Feature_detection)
+
+*Flow of the program*
+
+![Flow of the program](readme-assets/program-flow.png)
+
+The features this application uses are: 
+- Queryselector
+- Classlist
+- Eventlisteners
+- Drag and Drop
+
+### Queryselector
+The syntax querySelector is almost supported in all browsers except some old version of IE and Firefox. To make sure we don't miss any browsers we're adding a check if a browser support this feature.
+
+```javascript
+//Check support for querySelecotr
+if (document.querySelector) {
+    return true;
+} else {
+    return false;
+}
+```
+<details>
+    <summary>Can I Use: querySelector</summary>
+    <img src='readme-assets/can-i-use-queryselector.PNG'>
+</details>
+
+### Eventlisteners
+To be able to add an action after a user input, we need to a way to listen to this event. We need an eventlistener.
+
+```javascript
+if (document.addEventListener) {
+    return true;
+} else {
+    console.log('browser does not support AddEventListner');
+    return false;
+}
+```
+
+<details>
+    <summary>Can I Use: addEventListener</summary>
+    <img src='readme-assets/can-i-use-eventlistener.PNG'>
+</details>
+
+### Classlist
+We are adding a background color to an item that are dropable. To achieve that, we need to add class when you're hovering over a item. So we need to check if the user browser support this feature.
+
+```javascript
+//Check support for classList
+var checkClassList = document.querySelector('body').classList;
+if (checkClassList) {
+    console.log('browser support classlist');
+    //Check support for classList.add() and classList.toggle()
+    try {
+        checkClassList.add;
+        checkClassList.remove;
+        console.log('browser support classList.toggle and classList.add');
+        return true;
+
+    } catch (err) {
+        console.log('browser does not support classList.add or classList.toggle');
+        return false;
+    }
+
+} else {
+    console.log('browser doesnt support classlist')
+    return false;
+}
+```
+
+We're also checking if they support the add and remove featuer. Some browsers like IE doesn't support the second parameter for this function.
+
+<details>
+    <summary>Can I Use: classList</summary>
+    <img src='readme-assets/can-i-use-classlist.PNG'>
+</details>
+
+### Drag and drop
+And last but not least is the drag and drop function. Our enhancement is that the user is able to rearange the items. So we need to check if the items are dragable.
+
+```javascript
+//Check if we can drag an element
+if('draggable' in document.createElement('span')) {
+    return true;            
+}else{
+    console.log('does not support drag and drop')
+    return false;
+}
+```
+
+Caniuse.com says that a lot of browsers support drag and drop, but not the full spectrum. IE have a limited support for the setData that is actually imported for our application. I have tried to add a feature detection for this feature but this was very difficult. According to Modernizr:
+>File Drag 'n Drop (webkit doesnt expose a global DataTransfer constuctor to inspect) issue 57 - [Modernizr](https://github.com/Modernizr/Modernizr/wiki/Undetectables)
+
+I don't have a good solution for this chalenge at the moment.
+
+<details>
+    <summary>Can I Use: classList</summary>
+    <img src='readme-assets/can-i-use-drag-and-drop.PNG'>
+</details>
+
 
 ## Test
 
@@ -155,14 +278,7 @@ The core function works and the layout is acceptable.
 
 also the browser doesn't support the Let and Const of ES6, so I've changed those back to Var.
 ## Terminology
-### Feature detection
-Feature detection involves working out whether a browser supports a certain block of code, and running different code dependent on whether it does (or doesn't), so that the browser can always provide a working experience rather crashing/erroring in some browsers. - [MDN](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Feature_detection)
 
-```javascript
-if (navigator.geolocation) {
- // detect users location here B-) and do something awesome
-}
-```
 ### Modernizer
 Modernizr is a small piece of JavaScript code that automatically detects the availability of next-generation web technologies in your user’s browsers. Rather than blacklisting entire ranges of browsers based on “UA sniffing,” Modernizr uses feature detection to allow you to easily tailor your user’s experiences based on the actual capabilities of their browser.- [Rlyn Ben](https://medium.com/@rlynjb/js-interview-question-what-s-the-difference-between-feature-detection-feature-inference-and-76d2e4956a9b)
 
