@@ -12,7 +12,7 @@ var app = {
     },
     featureDectection : function (){
         //Check for the feature we need
-        if (feature.querySelector() && feature.eventListener() && feature.dragAndDrop()) {
+        if (feature.querySelector() && feature.eventListener() && feature.dragAndDrop() && feature.classList()) {
             return true;
         } else {
             return false;
