@@ -28,6 +28,9 @@ var app = {
             items[i].addEventListener('dragover', function (item) {
                 dragAndDrop.dragOver(item);
             });
+            items[i].addEventListener('dragleave', function (item) {
+                dragAndDrop.dragLeave(item);
+            });
             items[i].addEventListener('drop', function (item) {
                 dragAndDrop.dropItem(item);
             });
