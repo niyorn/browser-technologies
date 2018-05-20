@@ -14,8 +14,8 @@ When javacript is enabled, the user is able to reoder the list based on priority
 
 This section will explain what the core functionality of the application is.
 
-### Use scenario
-Katie wants to go the scenario, but got a lot items that she needs. She want to keep track of all of the items.
+### User scenario
+Katie wants to go the grocerie store, but got a lot items that she needs. She wants a way to keep track of all of the items that she needs.
 
 ### Core functionality
 The user scenario suggets that the user wants a way to add item to a list and keep track this by adding new items or removing items that the user already have.
