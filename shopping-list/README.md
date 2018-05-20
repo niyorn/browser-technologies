@@ -150,8 +150,31 @@ I don't have a good solution for this chalenge at the moment.
     <img src='readme-assets/can-i-use-drag-and-drop.PNG'>
 </details>
 
+## Accessibility
+In this section we're going to test the accessibilty of the application.
 
-## Test
+### Tabbing
+Some user are not able to use the trackpad. To make this application still usable for those user, the application needs to be tabable. As you can see from the gif. When loaded the focus is immediately on the input field and when an item is added the user is able to tab to the delete button and delete it.
+![A user tabs through the application](readme-assets/accessibilty-tab.gif)
+
+### Gray scale
+when making application I've had color blind users in mind, that's why instead only relaying on the color, I've also added the word 'Add' and 'Delete' to the application. So even when the user are color blind, the application is still usable.
+![A photo of the application when a gray scale filter is applied](readme-assets/accessibility-gray-scale.PNG)
+
+### Tritanopia
+>*Tritanopia (less than 1% of males and females): Lacking the short-wavelength cones, those affected see short-wavelength colors (blue, indigo and a spectral violet) greenish and drastically dimmed, some of these colors even as black. Yellow is indistinguishable from pink, and purple colors are perceived as various shades of red.* - [wikipedia](https://en.wikipedia.org/wiki/Color_blindness#Tritanopia)
+
+The result when this filter is applied is that the color are more dimmed. But the color green and red are still distinguishable. So no changes here.
+
+![A photo of the application when a tritanopia filter is applied](readme-assets/accessibility-tritanopia.PNG)
+
+### Protanopia
+>*Protanopia (1% of males): Lacking the red cones for long-wavelength sensitive retinal cones, those with this condition are unable to distinguish between colors in the green–yellow–red section of the spectrum.* - [wikipedia](https://en.wikipedia.org/wiki/Color_blindness#Protanopia)
+
+When the protanopia the color are still distinguishable between each other. So also no changes here.
+![A photo of the application when a portanopia filter is applied](readme-assets/accessibility-protanopia.PNG)
+
+## Browser test
 
 ### IE8
 ![To do application on IE8](readme-assets/ie8-test.gif)
@@ -274,9 +297,9 @@ __Result__
 
 The core function works and the layout is acceptable.
 
- 
-
 also the browser doesn't support the Let and Const of ES6, so I've changed those back to Var.
+
+
 ## Terminology
 
 ### Modernizer
