@@ -11,7 +11,7 @@ var dragAndDrop = {
     },
     dropItem: function (ev) {
         ev.preventDefault()
-        let data = ev.dataTransfer.getData("text")
+        var data = ev.dataTransfer.getData("text")
         //Swap data 
         this.source.innerHTML = ev.target.innerHTML
         ev.target.innerHTML = data;
