@@ -1,51 +1,6 @@
-<script>
-    (function () {
 
-        if(document.querySelector && document.addEventListener){
-            var app = {
-            init: function () {
-                var items = document.querySelectorAll('main li');
-                items.forEach(function (i) {
-                    i.addEventListener('dragstart', (item) => {
-                        dragAndDrop.dragStart(item)
-                    })
-                    i.addEventListener('dragover', (item) => {
-                        dragAndDrop.dragOver(item)
-                    })
-                    i.addEventListener('drop', (item) => {
-                        dragAndDrop.dropItem(item)
-                    })
-                })
-            }
-        }
 
-        var dragAndDrop = {
-
-            dragStart: function (ev) {
-                //set data ready for transfer
-                ev.dataTransfer.setData('text', ev.target.innerHTML)
-                this.source = ev.target;
-            },
-            dragOver: function (ev) {
-                //window dont allow item to be dropped on elements
-                //this is to prevend the prevention from windows
-                ev.preventDefault()
-            },
-            dropItem: function (ev) {
-                ev.preventDefault()
-                let data = ev.dataTransfer.getData("text")
-                //Swap data 
-                this.source.innerHTML = ev.target.innerHTML 
-                ev.target.innerHTML = data;
-            }
-        }
-        
-        app.init()
-        }else{
-            console.log('browser doesnt have enhancemet')
-        }
-    })()
-</script>
+<script src="script/app.js" type="module"></script>
+<script nomodule src="script/bundle.js" defer></script>
 </body>
-
 </html>
