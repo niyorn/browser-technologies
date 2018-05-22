@@ -174,6 +174,19 @@ The result when this filter is applied is that the color are more dimmed. But th
 When the protanopia the color are still distinguishable between each other. So also no changes here.
 ![A photo of the application when a portanopia filter is applied](readme-assets/accessibility-protanopia.PNG)
 
+## Device lab
+The application is tested in the device lab to see if the site is workable on mobile devices.
+
+### Result
+![A photo of the application on mobile devices](readme-assets/todo-device-lab.jpg)
+*Disclaimer: not all mobile devices works, so the application is only tested on devices that boot-up and have a browser with a internet connection*
+
+Overal the test went better than exptected. As you can see from the picture, the CSS is loaded normally, so the styling works like intended. Only on the __Samsung__ phone is the delete button not the color that we intended, but because of our fallback, the color is still ok. The Add and Delete button is still distinquishable from eachother.
+
+The core functionality -that is adding and delete items from the list- works on all of the devices. The user is able to add and delete items. Unfortunately only the HTC device is able to enhance our application. This is because this device have the latest version of Chrome. 
+
+The changed that I want to add from this test, is that we when an enhancement is enabled, an indicator must show on mobile devices. On a desktop when an user hover over an item there is an indicator that you're able to change the position of the item, unfortunately this is not the same for mobile devices. On mobile device you're not able to hover over the items to know that you're able to change the order of an item. So there need to be an indicator to give feedback to the user that the items is changable.
+
 ## Browser test
 
 ### IE8
