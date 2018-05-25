@@ -1,6 +1,14 @@
 
 
 # Feature detection
+
+## Feedback
+*Change after feedback*
+
+* [x] add readme
+* [x] crossbrowser check (hamburger menu also works on other browsers instead only on firefox)
+* [x] add feature detection
+
 >Feature detection involves working out whether a browser supports a certain block of code, and running different code dependent on whether it does (or doesn't), so that the browser can always provide a working experience rather crashing/erroring in some browsers. - [MDN](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Feature_detection)
 
 __Link to prototype__
